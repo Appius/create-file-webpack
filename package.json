@@ -1,0 +1,25 @@
+{
+  "name": "create-file-webpack",
+  "version": "1.0.0",
+  "description": "Webpack plugin for creating the file with the particular content",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Appius/create-file-webpack.git"
+  },
+  "keywords": [
+    "webpack",
+    "typescript",
+    "webpack-plugin"
+  ],
+  "author": "Appius",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Appius/create-file-webpack/issues"
+  },
+  "homepage": "https://github.com/Appius/create-file-webpack#readme",
+  "dependencies": {
+    "path": "^0.12.7",
+    "write": "^1.0.3"
+  }
+}
