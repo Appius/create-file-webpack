@@ -27,7 +27,7 @@ var opts = {
     // path to folder in which the file will be created
     path: './dist',
     // file name
-    main: 'index.js',
+    fileName: 'index.js',
     // content of the file
     content: 'export * from ./module.umd.js'
 };
