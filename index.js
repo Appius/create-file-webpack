@@ -11,7 +11,7 @@ var CreateFilePlugin = (function () {
     CreateFilePlugin.prototype.apply = function (compiler) {
         const _this = this;
 
-        compiler.plugin('done', function() {
+        compiler.hooks.done.tap('CreateFileWebpack', function() {
             const fullPath = path.join(_this.options.path, _this.options.fileName);
             write.sync(fullPath, _this.options.content);
         });
