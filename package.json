@@ -1,6 +1,6 @@
 {
   "name": "create-file-webpack",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Webpack plugin for creating the file with the particular content",
   "main": "index.js",
   "repository": {
