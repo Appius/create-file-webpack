@@ -1,6 +1,6 @@
 {
   "name": "create-file-webpack",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Webpack plugin for creating the file with the particular content",
   "main": "index.js",
   "repository": {
@@ -9,7 +9,6 @@
   },
   "keywords": [
     "webpack",
-    "typescript",
     "webpack-plugin"
   ],
   "author": "Appius",

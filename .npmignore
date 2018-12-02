@@ -1,0 +1,5 @@
+.git/
+.gitignore
+.editorconfig
+*.tgz
+*.sublime-project
