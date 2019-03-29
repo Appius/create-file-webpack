@@ -34,9 +34,9 @@ var CreateFilePlugin = (function () {
     const createFile = () => _createFile(this.options.path, this.options.fileName, this.options.content);
 
     if (!!compiler.hooks) {
-      compiler.hooks.done.tap('CreateFileWebpack', createFile());
+      compiler.hooks.afterPlugins.tap('CreateFileWebpack', createFile());
     } else {
-      compiler.plugin('done', createFile());
+      compiler.plugin('after-plugins', createFile());
     }
   };
 
