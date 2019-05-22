@@ -26,6 +26,7 @@ var CreateFilePlugin = (function () {
   function _createFile(filePath, fileName, content) {
     return () => {
       const fullPath = path.join(filePath, fileName);
+      const contentData = typeof content === 'function' ? content(filePath, fileName) : content;
       write.sync(fullPath, content);
     }
   }
