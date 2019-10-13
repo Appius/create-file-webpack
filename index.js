@@ -23,21 +23,18 @@ var CreateFilePlugin = (function () {
     this.options = options;
   }
 
-  function _createFile(filePath, fileName, content) {
-    return () => {
-      const fullPath = path.join(filePath, fileName);
-      write.sync(fullPath, content);
-    }
-  }
-
   CreateFilePlugin.prototype.apply = function (compiler) {
-    const createFile = () => _createFile(this.options.path, this.options.fileName, this.options.content);
+    compiler.hooks.emit.tap({ name: 'CreateFileWebpack' }, compilation => {
+      const relativePath = path.join(this.options.path, this.options.fileName);
+      const targetPath = path.join(compiler.options.output.path, relativePath);
 
-    if (!!compiler.hooks) {
-      compiler.hooks.done.tap('CreateFileWebpack', createFile());
-    } else {
-      compiler.plugin('done', createFile());
-    }
+      write.sync(targetPath, this.options.content);
+
+      compilation.assets[relativePath] = {
+        source: () => this.options.content,
+        size: () => this.options.content.length
+      };
+    });
   };
 
   return CreateFilePlugin;
